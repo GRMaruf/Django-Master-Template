@@ -70,6 +70,43 @@
         color: var(--brand-dark) !important;
       }
 
+      .nav-toggle {
+        align-items: center;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 5px;
+        height: 42px;
+        justify-content: center;
+        padding: 0;
+        width: 42px;
+      }
+
+      .nav-toggle span {
+        background: var(--ink);
+        border-radius: 999px;
+        display: block;
+        height: 2px;
+        transition: transform 0.22s ease, opacity 0.18s ease, width 0.22s ease;
+        width: 24px;
+      }
+
+      .nav-toggle span:nth-child(2) {
+        width: 18px;
+      }
+
+      .nav-toggle.is-open span:first-child {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .nav-toggle.is-open span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+      }
+
+      .nav-toggle.is-open span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
       .nav-cta {
         padding: 0.55rem 1rem;
       }
@@ -310,5 +347,14 @@
     {% include 'master/footer.html' %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      const navToggle = document.getElementById('navToggle')
+      const sidebar = document.getElementById('sidebar')
+
+      if (navToggle && sidebar) {
+        sidebar.addEventListener('show.bs.offcanvas', () => navToggle.classList.add('is-open'))
+        sidebar.addEventListener('hidden.bs.offcanvas', () => navToggle.classList.remove('is-open'))
+      }
+    </script>
   </body>
 </html>
