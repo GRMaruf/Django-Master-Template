@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top site-nav">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'home' %}">ProjectName</a>
+
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav align-items-lg-center gap-lg-2">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">Account</a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li>
+              <a class="dropdown-item" href="#">Change Password</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-brand nav-cta ms-lg-2" href="#">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start border-0 shadow-lg" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+  <div class="offcanvas-header sidebar-header text-white">
+    <div class="d-flex align-items-center gap-2">
+      <div>
+        <div class="fw-semibold" id="sidebarLabel">ProjectName</div>
+        <small class="opacity-75">Developer Project</small>
+      </div>
+    </div>
+
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body p-0">
+    <div class="px-3 pt-3">
+      <div class="text-uppercase small text-muted mb-2">Explore</div>
+      <a href="{% url 'home' %}" class="sidebar-link active">Home</a>
+      <a href="#" class="sidebar-link">Dashboard</a>
+    </div>
+
+    <hr class="my-3" />
+
+    <div class="px-3">
+      <div class="text-uppercase small text-muted mb-2">Account</div>
+      <a href="#" class="sidebar-link">Change Password</a>
+      <a href="#" class="sidebar-link">Logout</a>
+      <a href="#" class="sidebar-link">Login</a>
+      <a href="#" class="sidebar-link">Register</a>
+    </div>
+  </div>
+</div>
